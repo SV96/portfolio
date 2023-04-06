@@ -47,3 +47,33 @@ window.addEventListener('scroll', function () {
     content.style.display = 'none';
   }
 });
+
+// image pick
+const checkDomain = window.location.href.split('.').includes('github');
+
+const imageLocation = checkDomain
+  ? 'https://sv96.github.io/portfolio/assests/'
+  : '/assests/';
+
+const imageObj = {
+  'dark-image': `${imageLocation}weather-moon.svg`,
+  'light-image': `${imageLocation}Weather-Sun.png`,
+  'my-name-image': `${imageLocation}name-img.png`,
+  'web-dev-image': `${imageLocation}web-dev.webp`,
+  'India-image': `${imageLocation}location.webp`,
+  'graduate-image': `${imageLocation}graduation.png`,
+  'react-js-image': `${imageLocation}react.png`,
+  'node-js-image': `${imageLocation}nodejs.png`,
+  'python-image': `${imageLocation}python.jpg`,
+  'express-js-image': `${imageLocation}express.png`,
+  'django-image': `${imageLocation}django.svg`,
+  'down-arrow-image': `${imageLocation}down-arrow.png`,
+  'dark-footer-image': `${imageLocation}weather-moon.svg`,
+  'light-footer-image': `${imageLocation}Weather-Sun.png`,
+};
+
+for(let imgKey in imageObj){
+  const image = document.getElementById(imgKey);
+  const newImageSrc = imageObj[imgKey];
+  image.src = newImageSrc;
+}
